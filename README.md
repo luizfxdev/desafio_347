@@ -307,6 +307,6 @@ Se este projeto foi útil para você, considere dar uma ⭐️!
 
 <div align="center">
  Atrás de tudo que a gente acredita, tem uma verdade que não queremos enxergar.
-  <img src="https://img.shields.io/badge/Made%20with-💜%20%26%20☕-blueviolet?style=for-the-badge" alt="Made with love and coffee">
+  
 </div>
 
