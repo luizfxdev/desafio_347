@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Orbitron:wght@400;700;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #0a0514;
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Vídeo de fundo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Controles de Áudio */
+.audio-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.audio-btn {
+  background: rgba(10, 5, 24, 0.9);
+  border: 2px solid #fc0fc0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-btn:hover {
+  background: rgba(252, 15, 192, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(252, 15, 192, 0.5);
+}
+
+.audio-btn:active {
+  transform: scale(0.95);
+}
+
+/* Container Principal */
+.container {
+  position: fixed;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  background: rgba(10, 5, 24, 0.85);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(252, 15, 192, 0.5);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 40px rgba(252, 15, 192, 0.3), inset 0 0 30px rgba(252, 15, 192, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Barra de rolagem personalizada */
+.container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: rgba(10, 5, 24, 0.5);
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fc0fc0, #ff6ec7);
+  border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff1fd4, #ff8ed6);
+}
+
+/* Header do Desafio */
+.challenge-header {
+  margin-bottom: 25px;
+  animation: fadeInDown 0.8s ease;
+}
+
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #fc0fc0, #ff6ec7, #fc0fc0);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGlow 3s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(252, 15, 192, 0.5);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #e0e0e0;
+}
+
+.highlight {
+  color: #fc0fc0;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(252, 15, 192, 0.6);
+}
+
+.rules {
+  list-style: none;
+  padding-left: 15px;
+  margin: 15px 0;
+  font-size: 0.95rem;
+}
+
+.rules li {
+  margin: 8px 0;
+  color: #e0e0e0;
+}
+
+.example {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(252, 15, 192, 0.1);
+  border-left: 3px solid #fc0fc0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.code {
+  color: #fc0fc0;
+  font-family: 'Orbitron', monospace;
+  font-weight: bold;
+}
+
+/* Input Section */
+.input-section {
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease;
+}
+
+.input-section label {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fc0fc0;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(252, 15, 192, 0.5);
+}
+
+.input-section input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(5, 8, 1, 0.8);
+  border: 2px solid #fc0fc0;
+  border-radius: 8px;
+  color: #fc0fc0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-section input::placeholder {
+  color: rgba(252, 15, 192, 0.5);
+}
+
+.input-section input:focus {
+  background: rgba(5, 8, 1, 0.9);
+  box-shadow: 0 0 20px rgba(252, 15, 192, 0.5);
+  border-color: #ff6ec7;
+}
+
+/* Botões de Ação */
+.buttons-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  animation: fadeInUp 1.2s ease;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 20px 25px;
+  background-color: #050801;
+  color: #fc0fc0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid #fc0fc0;
+  border-radius: 8px;
+  letter-spacing: 3px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.action-btn:hover {
+  background: #fc0fc0;
+  color: #050801;
+  box-shadow: 0 0 5px #fc0fc0, 0 0 25px #fc0fc0, 0 0 50px #fc0fc0, 0 0 100px #fc0fc0;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  transform: translateY(-3px);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* Seção de Resultado */
+.result-section {
+  margin-top: 25px;
+  padding: 20px;
+  background: rgba(5, 8, 1, 0.9);
+  border: 2px solid #fc0fc0;
+  border-radius: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+  animation: slideInResult 0.6s ease;
+}
+
+.result-section.hidden {
+  display: none;
+}
+
+.result-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.result-section::-webkit-scrollbar-track {
+  background: rgba(10, 5, 24, 0.5);
+  border-radius: 10px;
+}
+
+.result-section::-webkit-scrollbar-thumb {
+  background: #fc0fc0;
+  border-radius: 10px;
+}
+
+.result-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fc0fc0;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(252, 15, 192, 0.6);
+}
+
+.result-content {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.validation-item {
+  padding: 12px;
+  margin: 10px 0;
+  background: rgba(252, 15, 192, 0.05);
+  border-left: 3px solid #fc0fc0;
+  border-radius: 5px;
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.validation-item.valid {
+  border-left-color: #0ff;
+  background: rgba(0, 255, 255, 0.05);
+}
+
+.validation-item.invalid {
+  border-left-color: #ff1744;
+  background: rgba(255, 23, 68, 0.05);
+}
+
+.final-output {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(252, 15, 192, 0.2), rgba(255, 110, 199, 0.2));
+  border: 2px solid #fc0fc0;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fc0fc0;
+  animation: finalGlow 1.5s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInResult {
+  from {
+    opacity: 0;
+    max-height: 0;
+    padding: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 400px;
+    padding: 20px;
+  }
+}
+
+@keyframes neonGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px rgba(252, 15, 192, 0.5), 0 0 30px rgba(252, 15, 192, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(252, 15, 192, 0.8), 0 0 50px rgba(252, 15, 192, 0.5);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(252, 15, 192, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(252, 15, 192, 0.6);
+  }
+}
+
+@keyframes finalGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(252, 15, 192, 0.5), inset 0 0 10px rgba(252, 15, 192, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(252, 15, 192, 0.8), inset 0 0 20px rgba(252, 15, 192, 0.4);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: none;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .buttons-section {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+
+  .audio-controls {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+    max-height: 85vh;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .input-section input {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .action-btn {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+
+  .result-title {
+    font-size: 1.2rem;
+  }
+
+  .result-content {
+    font-size: 0.85rem;
+  }
+}

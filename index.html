@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghost Binary - O Algoritmo das Sombras Neon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Vídeo de fundo -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="assets/background.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Áudio de fundo -->
+    <audio id="theme-audio" loop>
+      <source src="assets/theme.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Controles de Áudio -->
+    <div class="audio-controls">
+      <button id="play-audio" class="audio-btn" title="Tocar música">🎵</button>
+      <button id="pause-audio" class="audio-btn" title="Pausar música">⏸️</button>
+    </div>
+
+    <!-- Container Principal -->
+    <div class="container">
+      <!-- Descrição do Desafio -->
+      <div class="challenge-header">
+        <h1 class="title">🌐​ O ALGORITMO DAS SOMBRAS NEON ♾️</h1>
+        <p class="description">
+          Numa metrópole onde as luzes de neon cortam a escuridão, você é <strong>Ghost Binary</strong>, a decifradora
+          lendária. Seu desafio é identificar os <span class="highlight">números da sombra perfeita</span>
+          — códigos que possuem:
+        </p>
+        <ul class="rules">
+          <li>✦ <strong>Número ímpar de dígitos</strong></li>
+          <li>✦ <strong>Soma dos dígitos ímpares resulta em número primo</strong></li>
+        </ul>
+        <p class="example">
+          <strong>Exemplo:</strong> No intervalo 100-199, os códigos são: <span class="code">[113, 131, 151, 179]</span>
+        </p>
+      </div>
+
+      <!-- Input de Entrada -->
+      <div class="input-section">
+        <label for="interval-input">🔐 DIGITE O INTERVALO (ex: 100, 199):</label>
+        <input type="text" id="interval-input" placeholder="100, 199" autocomplete="off" />
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="buttons-section">
+        <button id="decipher-btn" class="action-btn">DECIFRAR</button>
+        <button id="return-btn" class="action-btn">RETORNAR</button>
+      </div>
+
+      <!-- Seção de Resultado -->
+      <div id="result-section" class="result-section hidden">
+        <h2 class="result-title">⚡ RESULTADO DA ANÁLISE</h2>
+        <div id="result-content" class="result-content"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
