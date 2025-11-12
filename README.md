@@ -306,7 +306,7 @@ Se este projeto foi útil para você, considere dar uma ⭐️!
 ---
 
 <div align="center">
- Atrás de tudo que a gente acredita, tem uma verdade que não queremos enxergar.
+ <i>Atrás de tudo que a gente acredita, tem uma verdade que não queremos enxergar.</i> (Cyberpunk 2077)
   
 </div>
 
